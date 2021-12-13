@@ -296,7 +296,7 @@ const App = () => {
                     </Slide>
                 </Grid>
                 <>
-                    <Grid container direction='row' spacing={3} alignItems='center' justifyContent='space-evenly'>
+                    <Grid container direction='row' alignItems='center' justifyContent='space-evenly'>
                         <Grid item>
                             <IconButton sx={classes.snButton} href={'https://www.lrworld.com/'}>
                                 <LanguageIcon/>
