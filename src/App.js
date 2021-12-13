@@ -4,9 +4,9 @@ import {
     Grid,
     Grow,
     IconButton,
-    responsiveFontSizes,
+    responsiveFontSizes, Slide,
     ThemeProvider,
-    Typography
+    Typography, useMediaQuery
 } from "@mui/material";
 import styled from "@emotion/styled";
 
@@ -20,6 +20,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LanguageIcon from '@mui/icons-material/Language';
 
 import FlipCountdown from '@rumess/react-flip-countdown';
+import {useEffect, useState} from "react";
 
 let theme = createTheme({})
 theme = responsiveFontSizes(theme);
@@ -31,10 +32,11 @@ const classes = {
         backgroundColor: 'rgba(53,128,118,.6)'
     },
     logo: {
-        height: '16vh',
+        height: '20vh',
         marginTop: 12,
         [theme.breakpoints.only('xs')]: {
-            marginTop: 4
+            marginTop: 4,
+            height: '16vh',
         },
     },
     startDate: {
@@ -60,7 +62,10 @@ const classes = {
         color: 'white',
         textTransform: 'uppercase',
         fontWeight: 600,
-        fontFamily: "'IBM Plex Sans', sans-serif"
+        fontFamily: "'IBM Plex Sans', sans-serif",
+        [theme.breakpoints.only('xs')]: {
+            fontSize: '1.75rem'
+        },
     },
     title2: {
         // fontSize: '5rem',
@@ -68,7 +73,10 @@ const classes = {
         textTransform: 'uppercase',
         fontWeight: 200,
         lineHeight: 1,
-        fontFamily: "'IBM Plex Sans', sans-serif"
+        fontFamily: "'IBM Plex Sans', sans-serif",
+        [theme.breakpoints.only('xs')]: {
+            fontSize: '2rem'
+        },
     },
     title3: {
         // fontSize: '6rem',
@@ -76,7 +84,10 @@ const classes = {
         textTransform: 'uppercase',
         fontWeight: 700,
         lineHeight: 1,
-        fontFamily: "'IBM Plex Sans', sans-serif"
+        fontFamily: "'IBM Plex Sans', sans-serif",
+        [theme.breakpoints.only('xs')]: {
+            fontSize: '2.125rem'
+        },
     },
     countdownContainer: {
         textAlign: 'center',
@@ -87,7 +98,8 @@ const classes = {
         fontWeight: 300,
         fontFamily: "'IBM Plex Sans', sans-serif",
         [theme.breakpoints.down('md')]: {
-            marginTop: 2
+            marginTop: 2,
+            fontSize: '1.5rem'
         },
     },
     countdown: {
@@ -158,6 +170,35 @@ const StreamButton = styled(Button)(({theme}) => ({
 
 const App = () => {
 
+    const [appear1, setAppear1] = useState(false);
+    const [appear2, setAppear2] = useState(false);
+    const [appear3, setAppear3] = useState(false);
+
+    let decCache = [],
+        decCases = [2, 0, 1, 1, 1, 2];
+    function decOfNum(number, titles)
+    {
+        if(!decCache[number]) decCache[number] = number % 100 > 4 && number % 100 < 20 ? 2 : decCases[Math.min(number % 10, 5)];
+        return titles[decCache[number]];
+    }
+
+    const [daysLeft, setDaysLeft] = useState(0);
+    const [hoursLeft, setHoursLeft] = useState(0);
+    const [minutesLeft, setMinutesLeft] = useState(0);
+    const [secondsLeft, setSecondsLeft] = useState(0);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setAppear1(true);
+        }, 100);
+        setTimeout(() => {
+            setAppear2(true);
+        }, 1000);
+        setTimeout(() => {
+            setAppear3(true);
+        }, 2000);
+    }, [])
+
     const getDaysPadej = (days) => {
         if (days === 0) return ''
         if (days >= 10 && days <= 19) return 'дней,'
@@ -169,16 +210,14 @@ const App = () => {
     }
 
     const countdownLabel = ({days, hours, minutes, seconds, completed}) => {
-        if (completed) {
-            // Render a complete state
-            return 'Трансляция началась!\nThe broadcast is started!';
-        } else {
-            // Render a countdown
-            return <Typography variant='h3' sx={classes.countdown}>
-                {`${days === 0 ? '' : days} ${getDaysPadej(days)} ${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`}
-            </Typography>
-        }
+        setDaysLeft(days)
+        setHoursLeft(hours)
+        setMinutesLeft(minutes)
+        setSecondsLeft(seconds)
+        return null
     };
+
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
         <ThemeProvider theme={theme}>
@@ -200,9 +239,10 @@ const App = () => {
                     </Typography>
                 </Grid>
 
-                <Grid container direction='row' justifyContent='space-evenly' alignItems='center' sx={classes.container}>
-                    <Grow in={true} style={{ transformOrigin: '0 440 0' }}
-                          {...({ timeout: 3500 })}>
+                <Grid container direction='row' justifyContent='space-evenly' alignItems='center'
+                      sx={classes.container}>
+                    <Grow in={appear1} style={{transformOrigin: '0 440 0'}}
+                          {...({timeout: 2000})}>
                         <Grid item sx={{textAlign: 'center'}}>
                             <Typography variant='h3' sx={classes.title1}>
                                 Запуск года
@@ -216,70 +256,75 @@ const App = () => {
                         </Grid>
                     </Grow>
 
+                        <Grow direction='left' in={appear2} {...({timeout: 2000})}>
                     <Grid item sx={classes.countdownContainer} alignItems='center'>
-                        <Typography variant='h4' sx={classes.timeLeft}>
-                            Старт трансляции через
-                        </Typography>
-                        {/*<Countdown*/}
-                        {/*    date={Date.UTC(2022, 0, 16, 11,)}*/}
-                        {/*    renderer={countdownLabel}*/}
-                        {/*/>*/}
+                            <Typography variant='h4' sx={classes.timeLeft}>
+                                Старт трансляции через
+                            </Typography>
                         <FlipCountdown
                             theme='light'
                             titlePosition='bottom'
                             hideYear
                             monthTitle='месяц'
-                            dayTitle='дня'
-                            hourTitle='часов'
-                            minuteTitle='минуты'
-                            secondTitle='секунд'
-                            size='medium'
+                            dayTitle={decOfNum(daysLeft, ['день', 'дня', 'дней'])}
+                            hourTitle={decOfNum(hoursLeft, ['час', 'часа', 'часов'])}
+                            minuteTitle={decOfNum(minutesLeft, ['минута', 'минуты', 'минут'])}
+                            secondTitle={decOfNum(secondsLeft, ['секунда', 'секунды', 'секунд'])}
+                            size={isMobile ? 'small' : 'medium'}
                             endAtZero
-                            endAt={new Date(2022, 0,16,11).toUTCString()}
+                            endAt={new Date(2022, 0, 16, 11, 0, 0).toUTCString()}
                             style={{fontFamily: "'IBM Plex Sans', sans-serif", color: '#000'}}
                         />
                     </Grid>
+                        </Grow>
                 </Grid>
                 <Grid item mt='auto' mb='auto'>
-                    <Grid container direction='row' alignItems='center' justifyContent='space-evenly'
-                          style={{textAlign: 'center'}}>
-                        <Grid item xs={12} md={6}>
-                            <StreamButton>
-                                Смотреть трансляцию
-                            </StreamButton>
+                    <Slide in={appear3} direction='up' {...({timeout: 2000})}>
+                        <Grid container direction='row' alignItems='center' justifyContent='space-evenly'
+                              style={{textAlign: 'center'}}>
+                            <Grid item xs={12} md={6}>
+                                <StreamButton>
+                                    Смотреть трансляцию
+                                </StreamButton>
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <StreamButton>
+                                    English broadcast
+                                </StreamButton>
+                            </Grid>
                         </Grid>
-                        <Grid item xs={12} md={6}>
-                            <StreamButton>
-                                English broadcast
-                            </StreamButton>
-                        </Grid>
-                    </Grid>
+                    </Slide>
                 </Grid>
                 <>
                     <Grid container direction='row' spacing={3} alignItems='center' justifyContent='space-evenly'>
                         <Grid item>
-                            <IconButton sx={classes.snButton}>
+                            <IconButton sx={classes.snButton} href={'https://www.lrworld.com/'}>
                                 <LanguageIcon/>
                             </IconButton>
                         </Grid>
                         <Grid item>
-                            <IconButton sx={classes.snButton}>
+                            <IconButton sx={classes.snButton} href='https://www.instagram.com/lr_russiakazakhstan_official/'>
                                 <InstagramIcon/>
                             </IconButton>
                         </Grid>
                         <Grid item>
-                            <IconButton sx={classes.snButton}>
+                            <IconButton sx={classes.snButton} href={'https://www.youtube.com/user/LRworldRussia'}>
                                 <YouTubeIcon/>
                             </IconButton>
                         </Grid>
                         <Grid item>
-                            <IconButton sx={classes.snButton}>
+                            <IconButton sx={classes.snButton} href={'https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FLRworldRUS%2F'}>
                                 <FacebookIcon/>
                             </IconButton>
                         </Grid>
                     </Grid>
                 </>
             </Grid>
+            <Countdown
+                date={new Date(2022, 0, 16, 11, 0, 0)}
+                renderer={countdownLabel}
+                style={{display: 'none'}}
+            />
         </ThemeProvider>
     );
 }
