@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/tanya_countdown/static/js/main.27a7ae22.chunk.js",
-    "main.js.map": "/tanya_countdown/static/js/main.27a7ae22.chunk.js.map",
+    "main.js": "/tanya_countdown/static/js/main.9284f103.chunk.js",
+    "main.js.map": "/tanya_countdown/static/js/main.9284f103.chunk.js.map",
     "runtime-main.js": "/tanya_countdown/static/js/runtime-main.49c84681.js",
     "runtime-main.js.map": "/tanya_countdown/static/js/runtime-main.49c84681.js.map",
-    "static/js/2.c092bfe1.chunk.js": "/tanya_countdown/static/js/2.c092bfe1.chunk.js",
-    "static/js/2.c092bfe1.chunk.js.map": "/tanya_countdown/static/js/2.c092bfe1.chunk.js.map",
+    "static/js/2.68aedb1d.chunk.js": "/tanya_countdown/static/js/2.68aedb1d.chunk.js",
+    "static/js/2.68aedb1d.chunk.js.map": "/tanya_countdown/static/js/2.68aedb1d.chunk.js.map",
     "index.html": "/tanya_countdown/index.html",
-    "static/js/2.c092bfe1.chunk.js.LICENSE.txt": "/tanya_countdown/static/js/2.c092bfe1.chunk.js.LICENSE.txt",
-    "static/media/logo.942c2d49.jpg": "/tanya_countdown/static/media/logo.942c2d49.jpg"
+    "static/js/2.68aedb1d.chunk.js.LICENSE.txt": "/tanya_countdown/static/js/2.68aedb1d.chunk.js.LICENSE.txt",
+    "static/media/amazing_fact.6ff0961c.jpg": "/tanya_countdown/static/media/amazing_fact.6ff0961c.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.49c84681.js",
-    "static/js/2.c092bfe1.chunk.js",
-    "static/js/main.27a7ae22.chunk.js"
+    "static/js/2.68aedb1d.chunk.js",
+    "static/js/main.9284f103.chunk.js"
   ]
 }
