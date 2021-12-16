@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.js": "/tanya_countdown/static/js/main.ac9ae44b.chunk.js",
-    "main.js.map": "/tanya_countdown/static/js/main.ac9ae44b.chunk.js.map",
+    "main.js": "/tanya_countdown/static/js/main.0c2d28f6.chunk.js",
+    "main.js.map": "/tanya_countdown/static/js/main.0c2d28f6.chunk.js.map",
     "runtime-main.js": "/tanya_countdown/static/js/runtime-main.49c84681.js",
     "runtime-main.js.map": "/tanya_countdown/static/js/runtime-main.49c84681.js.map",
-    "static/js/2.a6cf76a7.chunk.js": "/tanya_countdown/static/js/2.a6cf76a7.chunk.js",
-    "static/js/2.a6cf76a7.chunk.js.map": "/tanya_countdown/static/js/2.a6cf76a7.chunk.js.map",
+    "static/js/2.88285f00.chunk.js": "/tanya_countdown/static/js/2.88285f00.chunk.js",
+    "static/js/2.88285f00.chunk.js.map": "/tanya_countdown/static/js/2.88285f00.chunk.js.map",
     "index.html": "/tanya_countdown/index.html",
-    "static/js/2.a6cf76a7.chunk.js.LICENSE.txt": "/tanya_countdown/static/js/2.a6cf76a7.chunk.js.LICENSE.txt",
-    "static/media/8.a38d00d3.png": "/tanya_countdown/static/media/8.a38d00d3.png"
+    "static/js/2.88285f00.chunk.js.LICENSE.txt": "/tanya_countdown/static/js/2.88285f00.chunk.js.LICENSE.txt",
+    "static/media/bg.247e3aff.jpg": "/tanya_countdown/static/media/bg.247e3aff.jpg",
+    "static/media/taxist.e3cb8d76.jpg": "/tanya_countdown/static/media/taxist.e3cb8d76.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.49c84681.js",
-    "static/js/2.a6cf76a7.chunk.js",
-    "static/js/main.ac9ae44b.chunk.js"
+    "static/js/2.88285f00.chunk.js",
+    "static/js/main.0c2d28f6.chunk.js"
   ]
 }
