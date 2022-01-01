@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/tanya_countdown/static/js/main.bfbdbd47.chunk.js",
-    "main.js.map": "/tanya_countdown/static/js/main.bfbdbd47.chunk.js.map",
+    "main.js": "/tanya_countdown/static/js/main.b01437d3.chunk.js",
+    "main.js.map": "/tanya_countdown/static/js/main.b01437d3.chunk.js.map",
     "runtime-main.js": "/tanya_countdown/static/js/runtime-main.49c84681.js",
     "runtime-main.js.map": "/tanya_countdown/static/js/runtime-main.49c84681.js.map",
-    "static/js/2.f5a178c1.chunk.js": "/tanya_countdown/static/js/2.f5a178c1.chunk.js",
-    "static/js/2.f5a178c1.chunk.js.map": "/tanya_countdown/static/js/2.f5a178c1.chunk.js.map",
+    "static/js/2.14ccea51.chunk.js": "/tanya_countdown/static/js/2.14ccea51.chunk.js",
+    "static/js/2.14ccea51.chunk.js.map": "/tanya_countdown/static/js/2.14ccea51.chunk.js.map",
     "index.html": "/tanya_countdown/index.html",
-    "static/js/2.f5a178c1.chunk.js.LICENSE.txt": "/tanya_countdown/static/js/2.f5a178c1.chunk.js.LICENSE.txt",
+    "static/js/2.14ccea51.chunk.js.LICENSE.txt": "/tanya_countdown/static/js/2.14ccea51.chunk.js.LICENSE.txt",
     "static/media/notfunnymeme.f7f8524a.jpg": "/tanya_countdown/static/media/notfunnymeme.f7f8524a.jpg",
     "static/media/postcard.7e89b599.png": "/tanya_countdown/static/media/postcard.7e89b599.png"
   },
   "entrypoints": [
     "static/js/runtime-main.49c84681.js",
-    "static/js/2.f5a178c1.chunk.js",
-    "static/js/main.bfbdbd47.chunk.js"
+    "static/js/2.14ccea51.chunk.js",
+    "static/js/main.b01437d3.chunk.js"
   ]
 }
