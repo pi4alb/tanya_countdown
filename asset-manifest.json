@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/tanya_countdown/static/js/main.d0816508.chunk.js",
-    "main.js.map": "/tanya_countdown/static/js/main.d0816508.chunk.js.map",
+    "main.js": "/tanya_countdown/static/js/main.bfbdbd47.chunk.js",
+    "main.js.map": "/tanya_countdown/static/js/main.bfbdbd47.chunk.js.map",
     "runtime-main.js": "/tanya_countdown/static/js/runtime-main.49c84681.js",
     "runtime-main.js.map": "/tanya_countdown/static/js/runtime-main.49c84681.js.map",
     "static/js/2.f5a178c1.chunk.js": "/tanya_countdown/static/js/2.f5a178c1.chunk.js",
@@ -14,6 +14,6 @@
   "entrypoints": [
     "static/js/runtime-main.49c84681.js",
     "static/js/2.f5a178c1.chunk.js",
-    "static/js/main.d0816508.chunk.js"
+    "static/js/main.bfbdbd47.chunk.js"
   ]
 }
